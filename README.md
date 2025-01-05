@@ -1,74 +1,210 @@
+# Udaan Lead Management System
 
+## Project Overview
+Udaan Lead Management System is a comprehensive platform designed to streamline the management of leads, interactions, and performance metrics for key account managers (KAMs). It includes features for task planning, performance tracking, user authentication, and detailed reporting, making it a robust solution for sales teams.
+
+---
+## Live Demo
+Access the live versions of the frontend and backend applications through the links below:
+
+- **Live Application**: https://udankamdevanshu.netlify.app
+---
 ## System Requirements
-- **Backend Framework:** Python (Flask/Django), Node.js (Express), or Java (Spring Boot)
-- **Database:** Relational database (e.g., PostgreSQL/MySQL)
-- **Authentication:** JWT-based authentication
-- **Frontend:** Postman for API testing (frontend development optional)
+### Backend
+- **Node.js**: v16 or later
+- **MongoDB**: v4.0 or later
+- **npm/yarn**: v7 or later
 
-## Features
-### Core Requirements
-1. **Lead Management**
-   - Add new restaurant leads.
-   - Store basic restaurant information (name, address, etc.).
-   - Track lead status (e.g., New, In Progress, Converted, Dropped).
+### Frontend
+- **React**: v18 or later
+- **Node.js**: v16 or later
+- **npm/yarn**: v7 or later
 
-2. **Contact Management**
-   - Support multiple Points of Contact (POCs) per restaurant.
-   - Store contact details (name, role, phone, email, etc.).
-   - Allow different roles for POCs (e.g., Manager, Chef).
-
-3. **Interaction Tracking**
-   - Record all calls made to leads.
-   - Log orders placed by leads.
-   - Track interaction dates and details.
-
-4. **Call Planning**
-   - Set call frequency for each lead.
-   - Display leads requiring calls today.
-   - Track the last call made for each lead.
-
-5. **Performance Tracking**
-   - Identify well-performing accounts based on ordering patterns.
-   - Highlight underperforming accounts.
-   - Monitor ordering frequency.
-
-### Technical Requirements
-1. **Data Models**
-   - Well-defined schema for leads, contacts, interactions, and performance data.
-   - Efficient relationship management between entities.
-   - Indexing for optimal querying.
-
-2. **API Design**
-   - RESTful APIs for CRUD operations.
-   - Robust error handling mechanisms.
-   - Secure authentication and authorization.
-
-3. **Business Logic**
-   - Automatic determination of today's calls based on schedules.
-   - Metrics calculation for account performance.
-   - Seamless lead status transitions.
-
-4. **Edge Case Handling**
-   - Reassign leads if there’s a change in KAM.
-   - Handle timezone differences for call scheduling.
+---
 
 ## Installation Instructions
-1. Clone the repository:
-   
-   git clone https://github.com/inni-69/KAM_UDAAN.git
-   cd UDAAN2
+### 1. Clone the Repository
+```bash
+$ git clone https://github.com/abhay-59/KAM
+$ cd udaan-lead-management
+```
 
+### 2. Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   $ cd backend
+   ```
 2. Install dependencies:
+   ```bash
+   $ npm install
+   ```
+3. Configure `.env` file with the following variables:
+   ```env
+   MONGO_URI=your uri
+   JWT_SECRET=your_jwt_secret
+   PORT=5000
+   ```
+4. Start the backend server:
+   ```bash
+   $ npm run dev
+   ```
 
-   npm install
+### 3. Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   $ cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   $ npm install
+   ```
+3. Start the frontend server:
+   ```bash
+   $ npm start
+   ```
 
- 
+---
+
 ## Running Instructions
-1. Start the backend server:
+### Start Backend
+```bash
+$ cd backend
+$ npm run dev
+```
 
-   npm start
+### Start Frontend
+```bash
+$ cd frontend
+$ npm start
+```
 
-2. Access the API at http://localhost:5000 (or the configured port).
+Access the application at `http://localhost:5000`.
+
+---
+
+## Test Execution Guide
+### Backend Tests
+1. Navigate to the backend directory:
+   ```bash
+   $ cd backend
+   ```
+2. Run tests:
+   ```bash
+   $ npm test
+   ```
+
+### Frontend Tests
+1. Navigate to the frontend directory:
+   ```bash
+   $ cd frontend
+   ```
+2. Run tests:
+   ```bash
+   $ npm test
+   ```
+
+---
+
+## API Documentation
+### Authentication
+- **POST** `/api/auth/register`: Register a new user.
+- **POST** `/api/auth/login`: Login with email and password.
+
+### Restaurants
+- **GET** `/api/restaurants`: Fetch all restaurants.
+- **POST** `/api/restaurants`: Create a new restaurant.
+- **PUT** `/api/restaurants/:id`: Update a restaurant.
+- **DELETE** `/api/restaurants/:id`: Delete a restaurant.
+
+### Performance
+- **GET** `/api/performance`: Fetch performance metrics for the current month.
+
+### Interactions
+- **GET** `/api/calls/today`: Fetch today’s interactions (calls, emails, orders).
+
+---
+
+## Sample Usage Examples
+### Fetch Today’s Tasks
+Request:
+```bash
+GET /api/calls/today
+Authorization: Bearer <token>
+```
+Response:
+```json
+{
+  "interactions": [
+    {
+      "_id": "12345",
+      "type": "Call",
+      "restaurantName": "ABC Restaurant",
+      "contactName": "John Doe",
+      "time": "10:00",
+      "status": "Pending"
+    }
+  ]
+}
+```
+
+---
+
+## Code Setup Process
+1. Clone the repository.
+2. Set up environment variables in the backend.
+3. Install dependencies for both backend and frontend.
+4. Start both servers.
+
+---
+
+## Application Running
+1. Access the app at `http://localhost:5000`.
+2. Register or login as a user.
+3. Navigate to the dashboard to view and manage tasks and performance metrics.
+
+---
+
+## Major Features Demonstration
+### Task Management
+- View and manage tasks (calls, emails, orders) for the day.
+- Track completed and pending tasks.
+
+### Performance Metrics
+- Identify well-performing and underperforming accounts.
+- View aggregated interaction data for the current month.
+
+### User Management
+- Register and log in securely.
+- Assign restaurants to KAMs and reassign as needed.
+
+---
+
+## Sample Inputs/Outputs
+### Create a Restaurant
+Request:
+```json
+{
+  "name": "XYZ Restaurant",
+  "address": "123 Main Street",
+  "city": "Metropolis",
+  "state": "NY",
+  "zipcode": "12345",
+  "status": "Active"
+}
+```
+Response:
+```json
+{
+  "message": "Restaurant created successfully.",
+  "data": {
+    "_id": "12345",
+    "name": "XYZ Restaurant",
+    ...
+  }
+}
+```
+
+---
 
 
 ![Screenshot 2025-01-05 184317](https://github.com/user-attachments/assets/9864aa45-dd44-4a3d-8e7f-171db74f5f2d)
