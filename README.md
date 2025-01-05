@@ -1,3 +1,4 @@
+
 ## System Requirements
 - **Backend Framework:** Python (Flask/Django), Node.js (Express), or Java (Spring Boot)
 - **Database:** Relational database (e.g., PostgreSQL/MySQL)
@@ -72,6 +73,12 @@
 
 ![Screenshot 2025-01-05 184317](https://github.com/user-attachments/assets/9864aa45-dd44-4a3d-8e7f-171db74f5f2d)
 ![Screenshot 2025-01-05 184449](https://github.com/user-attachments/assets/228cfbf1-664b-47c7-8302-811f79f831e0)
+![Screenshot 2025-01-05 184602](https://github.com/user-attachments/assets/4c634e0b-3769-40c1-b9dc-1e1dbc641425)
+![Screenshot 2025-01-05 184635](https://github.com/user-attachments/assets/88492a2c-6d0f-4218-b301-545a14fb3a6c)
+![Screenshot 2025-01-05 185415](https://github.com/user-attachments/assets/5b2b44d7-f90e-47df-a0d5-136bec182cf6)
+
+
+
 
 
 
